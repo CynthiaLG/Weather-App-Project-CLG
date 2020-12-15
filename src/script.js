@@ -67,11 +67,9 @@ function showWeather(response) {
   let tempHolder = document.querySelector("#current-temp");
   let cityHolder = document.querySelector("#city");
   weathDescrip.innerHTML = `${response.data.weather[0].description}`;
-  windSpeed.innerHTML = `${response.wind.speed.value}`;
+  windSpeed.innerHTML = `${response.wind.speed}`;
   tempHolder.innerHTML = `${temp}`;
   cityHolder.innerHTML = `${response.data.name}`;
-
-  console.log(response.data);
 }
 
 function retrievePosition(position) {
