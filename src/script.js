@@ -62,8 +62,14 @@ function showTemperature(response) {
 
 function showWeather(response) {
   let temp = Math.round(response.data.main.temp);
+  let wind = (response.data.wind.speed);
+  let description = (response.data.weather.description);
+  let weathDescrip = document.querySelector("#weather-descrip");
+  let windSpeed = document.querySelector("#wind-speed");
   let tempHolder = document.querySelector("#current-temp");
   let cityHolder = document.querySelector("#city");
+  weathDescrip.innerHTML = `Today it´ll be:${description}`;
+  windSpeed.innerHTML = `Wind speed:${wind}`;
   tempHolder.innerHTML = `${temp}`;
   cityHolder.innerHTML = `${response.data.name}`;
 }
