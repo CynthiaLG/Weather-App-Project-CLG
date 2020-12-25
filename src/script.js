@@ -56,7 +56,7 @@ function SearchCity(city) {
 function showTemperature(response) {
   let roundedTemp = Math.round(response.data.main.temp);
   let currentTemp = document.querySelector("#current-temp");
-  currentTemp.innerHTML = `${roundedTemp}°C`;
+  currentTemp.innerHTML = `${roundedTemp}`;
 }
 
 // find my current location or position
@@ -73,6 +73,7 @@ function showWeather(response) {
   tempHolder.innerHTML = `${Math.round(response.data.main.temp)}`;
   cityHolder.innerHTML = `${response.data.name}`;
   humidHolder.innerHTML = `Humidity:${response.data.main.humidity}%`;
+  celsiusTemp = Math.round(response.data.main.temp);
 }
 
 function retrievePosition(position) {
@@ -88,3 +89,16 @@ function searchPosition() {
 
 let myLoc = document.querySelector("#current-location");
 myLoc.addEventListener("click", searchPosition);
+
+//Changing units for temperature 
+function showFahren(event){
+event.preventDefault();
+let tempHolder =document.querySelector("#current-temp")
+let fahrenTemp = (celsiusTemp * 9) / 5 + 32;
+tempHolder.innerHTML = Math.round(fahrenTemp);
+}
+
+let celsiusTemp =null;
+
+let fahrenChange =document.querySelector("#fahrenheit");
+fahrenChange.addEventListener("click", showFahren);
