@@ -100,14 +100,14 @@ ul {
   padding: 0;
   border: none;
   background: none;
-}
-.fahrenheit,
-.celsius {
   color: black;
   text-decoration: none;
 }
-.fahrenheit:hover,
-.celsius:hover {
+a {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
   color: red;
   text-decoration: none;
 }

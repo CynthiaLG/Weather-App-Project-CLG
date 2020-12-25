@@ -98,7 +98,16 @@ let fahrenTemp = (celsiusTemp * 9) / 5 + 32;
 tempHolder.innerHTML = Math.round(fahrenTemp);
 }
 
+function showCels(event){
+event.preventDefault();
+let tempHolder =document.querySelector("#current-temp")
+tempHolder.innerHTML = celsiusTemp;
+}
+
 let celsiusTemp =null;
 
 let fahrenChange =document.querySelector("#fahrenheit");
 fahrenChange.addEventListener("click", showFahren);
+
+let celsiusChange =document.querySelector("#celsius");
+celsiusChange.addEventListener("click", showCels);
