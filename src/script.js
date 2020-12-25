@@ -50,6 +50,7 @@ function SearchCity(city) {
   let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
   let apiUrl = `${apiEndpoint}?q=${city}&units=${units}&appid=${apiKey}`;
   axios.get(`${apiUrl}`).then(showTemperature);
+  axios.get(apiUrl).then(showWeather);
 }
 
 function showTemperature(response) {
@@ -61,22 +62,24 @@ function showTemperature(response) {
 // find my current location or position
 
 function showWeather(response) {
-  let temp = Math.round(response.data.main.temp);
+  console.log(response.data);
   let weathDescrip = document.querySelector("#descript");
   let windSpeed = document.querySelector("#wind-speed");
   let tempHolder = document.querySelector("#current-temp");
   let cityHolder = document.querySelector("#city");
+  let humidHolder =document.querySelector("#humidity")
   weathDescrip.innerHTML = `${response.data.weather[0].description}`;
-  windSpeed.innerHTML = `${response.wind.speed}`;
-  tempHolder.innerHTML = `${temp}`;
+  windSpeed.innerHTML = `Wind Speed: ${response.data.wind.speed} Km/H`;
+  tempHolder.innerHTML = `${Math.round(response.data.main.temp)}`;
   cityHolder.innerHTML = `${response.data.name}`;
+  humidHolder.innerHTML = `Humidity:${response.data.main.humidity}%`;
 }
 
 function retrievePosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiKey = "f849a290611306768174e22ee045bba6";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
 }
 function searchPosition() {

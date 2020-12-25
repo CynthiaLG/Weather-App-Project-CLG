@@ -1,3 +1,6 @@
+body {
+  text-decoration: none;
+}
 .card {
   display: block;
   margin: 0 auto;
@@ -88,6 +91,7 @@ img {
   padding: 0;
 }
 ul {
+  text-transform: capitalize;
   position: relative;
   left: -40px;
   font-size: 10px;
