@@ -59,7 +59,7 @@ function showTemperature(response) {
   currentTemp.innerHTML = `${roundedTemp}`;
 }
 
-// find my current location or position
+// Show my weather and it´s attributes 
 
 function showWeather(response) {
   console.log(response.data);
@@ -68,14 +68,16 @@ function showWeather(response) {
   let tempHolder = document.querySelector("#current-temp");
   let cityHolder = document.querySelector("#city");
   let humidHolder =document.querySelector("#humidity")
+  let iconElement = document.querySelector("#icon");
   weathDescrip.innerHTML = `${response.data.weather[0].description}`;
   windSpeed.innerHTML = `Wind Speed: ${response.data.wind.speed} Km/H`;
   tempHolder.innerHTML = `${Math.round(response.data.main.temp)}`;
   cityHolder.innerHTML = `${response.data.name}`;
   humidHolder.innerHTML = `Humidity:${response.data.main.humidity}%`;
   celsiusTemp = Math.round(response.data.main.temp);
+  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
 }
-
+// find my current location or position
 function retrievePosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;

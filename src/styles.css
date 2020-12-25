@@ -75,15 +75,16 @@ img {
   right: 50px;
   font-family: "Anonymous Pro", monospace;
 }
-.bigimgdisplay {
+.icon {
   position: relative;
   bottom: 90px;
   left: 100px;
   width: 90px;
 }
 .city {
+  text-align: center;
   position: relative;
-  right: 70px;
+  right: 20px;
   bottom: 150px;
   padding: 0;
 }
