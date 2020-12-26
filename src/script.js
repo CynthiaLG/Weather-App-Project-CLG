@@ -21,7 +21,7 @@ function formatDate(date) {
     "Saturday"
   ];
   let day = days[dayIndex];
-  return `${day} ${hours}:${minutes}`;
+  return `Last Updated:${day} ${hours}:${minutes}`;
 }
 //Search City and display temperature, day and local time.
 function search(event) {
@@ -44,7 +44,6 @@ searchForm.addEventListener("submit", search);
 dateElement.innerHTML = formatDate(currentDate);
 
 function displayForecast (response){
-  console.log(response.data)
   let temp1 = document.querySelector("#time1-temp");
    let iconElement1 = document.querySelector("#time1-icon");
   let temp2 = document.querySelector("#time2-temp");
@@ -88,7 +87,7 @@ function showTemperature(response) {
 // Show my weather and its attributes 
 
 function showWeather(response) {
-  console.log(response.data);
+  console.log(response.data)
   let weathDescrip = document.querySelector("#descript");
   let windSpeed = document.querySelector("#wind-speed");
   let tempHolder = document.querySelector("#current-temp");
@@ -96,7 +95,7 @@ function showWeather(response) {
   let humidHolder =document.querySelector("#humidity")
   let iconElement = document.querySelector("#icon");
   weathDescrip.innerHTML = `${response.data.weather[0].description}`;
-  windSpeed.innerHTML = `Wind Speed: ${response.data.wind.speed} Km/H`;
+  windSpeed.innerHTML = `Wind Speed:${response.data.wind.speed} Km/H`;
   tempHolder.innerHTML = `${Math.round(response.data.main.temp)}`;
   cityHolder.innerHTML = `${response.data.name}`;
   humidHolder.innerHTML = `Humidity:${response.data.main.humidity}%`;

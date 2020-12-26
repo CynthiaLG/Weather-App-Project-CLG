@@ -17,10 +17,10 @@
   text-align: center;
   display: block;
   margin: 0 auto;
-  padding: 8px;
+  padding: 1px;
   background-color: white;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 0.5px solid black;
 }
 .submit-form {
   background-color: black;
@@ -31,6 +31,7 @@
   color: black;
 }
 .search.form {
+  text-align: center;
   display: block;
   margin: 0 auto;
   max-width: 60%;
@@ -119,4 +120,9 @@ a {
 a:hover {
   color: red;
   text-decoration: none;
+}
+.source-clip {
+  margin-left: auto;
+  margin-right: auto;
+  width: 8em;
 }
