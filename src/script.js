@@ -23,7 +23,7 @@ function formatDate(date) {
   let day = days[dayIndex];
   return `${day} ${hours}:${minutes}`;
 }
-
+//Search City and display temperature, day and local time.
 function search(event) {
   event.preventDefault();
   let cityElement = document.querySelector("#city");
@@ -43,7 +43,20 @@ searchForm.addEventListener("submit", search);
 
 dateElement.innerHTML = formatDate(currentDate);
 
-//Search City and display temperature
+function displayForecast (response){
+  console.log(response.data)
+  let temp1 = document.querySelector("#time1-temp");
+  let temp2 = document.querySelector("#time2-temp");
+  let temp3 = document.querySelector("#time3-temp");
+  let temp4 = document.querySelector("#time4-temp");
+  let temp5 = document.querySelector("#time5-temp");
+  temp1.innerHTML = `${Math.round(response.data.list[3].main.temp_max)}°C`;
+  temp2.innerHTML = `${Math.round(response.data.list[4].main.temp_max)}°C`;
+  temp3.innerHTML = `${Math.round(response.data.list[5].main.temp_max)}°C`;
+  temp4.innerHTML = `${Math.round(response.data.list[6].main.temp_max)}°C`;
+  temp5.innerHTML = `${Math.round(response.data.list[7].main.temp_max)}°C`;
+ }
+
 function SearchCity(city) {
   let units = "metric";
   let apiKey = "f849a290611306768174e22ee045bba6";
@@ -51,15 +64,17 @@ function SearchCity(city) {
   let apiUrl = `${apiEndpoint}?q=${city}&units=${units}&appid=${apiKey}`;
   axios.get(`${apiUrl}`).then(showTemperature);
   axios.get(apiUrl).then(showWeather);
-}
 
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast)
+}
 function showTemperature(response) {
   let roundedTemp = Math.round(response.data.main.temp);
   let currentTemp = document.querySelector("#current-temp");
   currentTemp.innerHTML = `${roundedTemp}`;
 }
 
-// Show my weather and it´s attributes 
+// Show my weather and its attributes 
 
 function showWeather(response) {
   console.log(response.data);
@@ -113,3 +128,7 @@ fahrenChange.addEventListener("click", showFahren);
 
 let celsiusChange =document.querySelector("#celsius");
 celsiusChange.addEventListener("click", showCels);
+
+// Forecast of 5 days 3 hours 
+
+

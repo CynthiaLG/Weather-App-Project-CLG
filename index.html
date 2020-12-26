@@ -20,52 +20,32 @@
         <div class="card-body">
             <h5 class="card-title">Weather APP</h5>
             <form id="search-form">
-                <input type="text" placeholder="Enter your city" id="city-input" autocomplete= "off"/>
+                <input type="search" placeholder="Enter your city" id="city-input" autocomplete= "off"/>
                 <input type="Submit" id="submit-form" value="Search" />
                 <button type="button" class="btn-info" id="current-location"> My Location </button>
             </form>
         </div>
         <div class="container">
             <div class="row row-cols-5">
-                <div class="Mon">
-                    <h2>Mon</h2>
-                </div>
-                <div class="Tues">
-                    <h2>Tues</h2>
-                </div>
-                <div class="Wed">
-                    <h2>Wed</h2>
-                </div>
-                <div class="Thur">
-                    <h2>Thur</h2>
-                </div>
-                <div class="Fri">
-                    <h2>Fri</h2>
-                </div>
+                <div id="time1"><h2>9:00</h2></div>
+                <div id="time2"><h2>12:00</h2></div>
+                <div id="time3"><h2>15:00</h2></div>
+                <div id="time4"><h2>18:00</h2></div>
+                <div id="time5"><h2>21:00</h2></div>
             </div>
             <div class="row row-cols-5">
-                <div class="23">
-                    <h3>23°C</h3>
-                </div>
-                <div class="20">
-                    <h3>20°C</h3>
-                </div>
-                <div class="28">
-                    <h3>28°C</h3>
-                </div>
-                <div class="25">
-                    <h3>25°C</h3>
-                </div>
-                <div class="27">
-                    <h3>27°C</h3>
-                </div>
+                <div><h3 id="time1-temp">23°C</h3></div>
+                <div><h3 id ="time2-temp">20°C</h3></div>
+                <div><h3 id="time3-temp">28°C</h3></div>
+                <div><h3 id="time4-temp">25°C</h3></div>
+                <div><h3 id ="time5-temp">27°C</h3></div>
             </div>
             <div class="row row-cols-5" id="day-img">
-                <div class="mon-img"><img src="media/SUN-CLOUD.png" /></div>
-                <div class="tues-img"><img src="media/RAIN-STORM.png" /></div>
-                <div class="wed-img"><img src="media/SUN.png" /></div>
-                <div class="thur-img"><img src="media/SUN-CLOUD.png" /></div>
-                <div class="fri-img"><img src="media/SUN.png" /></div>
+                <div id="mon-img"><img src="media/SUN-CLOUD.png" /></div>
+                <div id="tues-img"><img src="media/RAIN-STORM.png" /></div>
+                <div id ="wed-img"><img src="media/SUN.png" /></div>
+                <div id ="thur-img"><img src="media/SUN-CLOUD.png" /></div>
+                <div id ="fri-img"><img src="media/SUN.png" /></div>
             </div>
             <br>
             <br>
@@ -85,8 +65,9 @@
                     <li id="local-time">Local time: 11:30 AM</li>
                 </ul>
             </div>
-            <br>
-            <img id ="icon" src="">
+            <span>
+                <img id="icon" src="">
+            </span>
             <br>
             <h1 id="city">Mexico City</h1>
         </div>
