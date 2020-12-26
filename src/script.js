@@ -46,15 +46,26 @@ dateElement.innerHTML = formatDate(currentDate);
 function displayForecast (response){
   console.log(response.data)
   let temp1 = document.querySelector("#time1-temp");
+   let iconElement1 = document.querySelector("#time1-icon");
   let temp2 = document.querySelector("#time2-temp");
+   let iconElement2 = document.querySelector("#time2-icon");
   let temp3 = document.querySelector("#time3-temp");
+   let iconElement3 = document.querySelector("#time3-icon");
   let temp4 = document.querySelector("#time4-temp");
+   let iconElement4 = document.querySelector("#time4-icon");
   let temp5 = document.querySelector("#time5-temp");
-  temp1.innerHTML = `${Math.round(response.data.list[3].main.temp_max)}°C`;
-  temp2.innerHTML = `${Math.round(response.data.list[4].main.temp_max)}°C`;
-  temp3.innerHTML = `${Math.round(response.data.list[5].main.temp_max)}°C`;
-  temp4.innerHTML = `${Math.round(response.data.list[6].main.temp_max)}°C`;
-  temp5.innerHTML = `${Math.round(response.data.list[7].main.temp_max)}°C`;
+   let iconElement5 = document.querySelector("#time5-icon");
+  temp1.innerHTML = `${Math.round(response.data.list[2].main.temp_max)}°C`;
+  iconElement1.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.list[2].weather[0].icon}@2x.png`)
+  temp2.innerHTML = `${Math.round(response.data.list[3].main.temp_max)}°C`;
+  iconElement2.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.list[3].weather[0].icon}@2x.png`)
+  temp3.innerHTML = `${Math.round(response.data.list[4].main.temp_max)}°C`;
+  iconElement3.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.list[4].weather[0].icon}@2x.png`)
+  temp4.innerHTML = `${Math.round(response.data.list[5].main.temp_max)}°C`;
+  iconElement4.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.list[5].weather[0].icon}@2x.png`)
+  temp5.innerHTML = `${Math.round(response.data.list[6].main.temp_max)}°C`;
+  iconElement5.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.list[6].weather[0].icon}@2x.png`)
+
  }
 
 function SearchCity(city) {
