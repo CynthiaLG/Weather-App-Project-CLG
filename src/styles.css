@@ -74,7 +74,7 @@ h4 h2 {
   font-family: "Josefin Sans", sans-serif;
 }
 img {
-  max-width: 50%;
+  max-width: 80%;
 }
 .units {
   position: relative;
@@ -85,12 +85,6 @@ img {
   position: relative;
   right: 50px;
   font-family: "Anonymous Pro", monospace;
-}
-.icon {
-  position: relative;
-  bottom: 90px;
-  left: 100px;
-  width: 90px;
 }
 .city {
   text-align: center;
